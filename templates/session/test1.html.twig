@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block sub_title %}
+test 1
+{% endblock %}
+
+{% block tests %}
+    {% dump(cookie) %}
+
+{% endblock tests %}
+
+
+
+{% block sub_body %}
+
+
+
+    {% if cookie %}
+        <h3 class="mt-5"> le cookie  a pour valeur <span class="alert-success">{{ cookie }}</span></h3>
+        <a href="{{ path('remove.cookie') }}">
+            <button type="submit" class="btn btn-danger">supprimer le cookie</button>
+        </a>
+    {% else %}
+        <h3 class="mt-5 alert-danger"> le cookie  n'est pas défini</h3>
+        <a href="{{ path('session.define') }}">
+            <button class="btn btn-primary">(re)define cookie</button>
+        </a>
+
+    {% endif %}
+
+
+
+{% endblock  sub_body%}
+

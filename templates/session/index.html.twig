@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block sub_title %}index{% endblock %}
+
+{% block sub_body %}
+    <h1>Sessions Symfoniques</h1>
+
+    <p>pour voir si une session ou un cookie existe cliquer le  bouton</p>
+    <a href="{{ path('session.test') }}">
+        <button class="btn btn-primary" type="button">voir la session</button>
+    </a>
+{% endblock sub_body %}
